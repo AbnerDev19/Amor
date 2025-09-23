@@ -477,38 +477,50 @@ body {
 /* --- RESPONSIVIDADE PARA CELULARES (max-width: 768px) --- */
 
 @media screen and (max-width: 768px) {
+    /* Ajustes no Player */
+    .album-art {
+        width: 250px;
+        height: 250px;
+    }
+
+    .song-details .song-title {
+        font-size: 24px;
+    }
+
     /* Move a linha do tempo para a esquerda */
     .timeline::after {
         left: 31px;
     }
+    
     /* Deixa todos os containers com 100% de largura */
     .timeline-container {
         width: 100%;
         padding-left: 70px;
         padding-right: 25px;
     }
-    /* Remove as setas */
+    
+    /* Remove as setas que apontam para a linha */
     .timeline-container::before {
         display: none;
     }
+    
     /* Garante que todos os containers fiquem à direita da linha */
     .left,
     .right {
         left: 0%;
     }
+    
     /* Alinha o círculo de todos os containers com a nova linha */
     .left::after,
     .right::after {
         left: 15px;
     }
+    
     /* Garante que o conteúdo dentro dos containers da direita não inverta a ordem */
     .right .timeline-content {
-        flex-direction: row;
+        flex-direction: column; /* CORREÇÃO PRINCIPAL AQUI */
     }
-    /* Garante que o texto fique sempre alinhado à esquerda */
-    .right .text-block {
-        text-align: left;
-    }
+    
     /* Ajusta o layout do conteúdo para telas pequenas */
     .timeline-content {
         flex-direction: column;
@@ -516,8 +528,38 @@ body {
         align-items: flex-start;
         /* Alinha tudo à esquerda */
     }
+    
+    /* Garante que o texto fique sempre alinhado à esquerda */
+    .right .text-block {
+        text-align: left;
+    }
+    
     .polaroid {
         transform: rotate(0deg) !important;
         /* Remove a rotação em telas pequenas */
     }
-}
+
+    /* Ajustes no Modal de Memórias */
+    #memory-image {
+        max-width: 90vw; /* Permite que a imagem seja um pouco mais larga */
+    }
+
+    #memory-text {
+        font-size: 18px; /* Diminui um pouco o texto */
+        max-width: 85vw; /* Garante que o texto não fique colado nas bordas */
+    }
+
+    .modal-nav-btn {
+        width: 45px; /* Diminui o tamanho dos botões */
+        height: 45px;
+        font-size: 30px;
+    }
+
+    .modal-nav-btn.prev {
+        left: 10px; /* Aproxima os botões das bordas */
+    }
+
+    .modal-nav-btn.next {
+        right: 10px;
+    }
+}   
