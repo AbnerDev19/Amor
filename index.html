@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa História</title>
+    <link rel="preload" href="sua-musica.mp3" as="audio">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <main class="page-wrapper">
+        <section class="player-container">
+            <div class="heart-animation-area"></div>
+            <div class="player-content">
+                <img src="foto-casal.jpg" alt="Foto do Casal" class="album-art">
+                <div class="song-details">
+                    <h1 class="song-title">Nome da Música</h1>
+                    <p class="artist-name">Nome de Vocês</p>
+                </div>
+                <audio id="nossa-musica" src="sua-musica.mp3" autoplay loop></audio>
+                <div class="progress-bar-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+                <div class="controls"><button id="play-pause-btn" class="control-button"><i class="fas fa-pause"></i></button></div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="content-card">
+                <h2>Letra & Memórias</h2>
+                <p class="lyrics">"Aqui vai a primeira estrofe..."</p>
+                <p class="memory-highlight">23.09.2024: O dia em que tudo começou.</p>
+                <p class="lyrics">"E então, a próxima parte da canção..."</p>
+
+                <div id="open-memories-card" class="memories-card-preview">
+                    <h3>Nossas Memórias Inesquecíveis</h3>
+                    <p>Clique aqui para ver nossa história em fotos.</p>
+                    <i class="fas fa-expand-alt"></i>
+                </div>
+
+                <p class="lyrics">"O refrão que é a nossa cara..."</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="memories-modal" class="memories-modal">
+        <button id="close-memories-btn" class="modal-close-btn">&times;</button>
+        <div class="modal-content">
+            <img id="memory-image" src="" alt="Nossa Memória">
+            <p id="memory-text"></p>
+        </div>
+        <button id="prev-memory-btn" class="modal-nav-btn prev">&lt;</button>
+        <button id="next-memory-btn" class="modal-nav-btn next">&gt;</button>
+    </div>
+    <section class="timeline-section">
+        <h2>Nossa História</h2>
+        <div class="timeline">
+            <div class="timeline-container left">
+                <div class="timeline-content">
+                    <div class="polaroid">
+                        <img src="foto-conhecemos.jpg" alt="O dia que nos conhecemos">
+                        <div class="caption">Onde tudo começou...</div>
+                    </div>
+                    <div class="text-block">
+                        <h3>O Dia em que nos Conhecemos</h3>
+                        <small>DD de Mês, AAAA</small>
+                        <p>Aqui vai a frase sobre como foi especial o dia em que seus caminhos se cruzaram.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-container right">
+                <div class="timeline-content">
+                    <div class="polaroid">
+                        <img src="foto-encontro.jpg" alt="Nosso primeiro encontro">
+                        <div class="caption">Nosso primeiro encontro</div>
+                    </div>
+                    <div class="text-block">
+                        <h3>O Primeiro Encontro</h3>
+                        <small>DD de Mês, AAAA</small>
+                        <p>Descreva aqui a sensação e as memórias daquele primeiro encontro oficial.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
